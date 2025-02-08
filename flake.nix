@@ -5,7 +5,7 @@
 
   outputs = { nixpkgs, ... }@inputs:
     let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      pkgs = import nixpkgs { system = "aarch64-linux"; };
       yamlLib = import ./modules/lib.nix { inherit pkgs; };
     in { lib = yamlLib; };
 }
