@@ -12,7 +12,7 @@
     ...
   }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
+      pkgs = nixpkgs.legacyPackages.${system};
       yamlLib = import ./modules/lib.nix {inherit system pkgs;};
     in {lib = yamlLib;});
 }
